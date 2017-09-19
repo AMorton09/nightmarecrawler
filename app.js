@@ -17,6 +17,7 @@ app.set('view engine', 'handlebars');
 let scrape = (url) => {
     console.log("2...");
     nightmare.goto(url)
+        .inject('js', 'node_modules/jquery/dist/jquery.js')
         .wait(2000)
         .evaluate(()=>{
             console.log("3...");
@@ -35,7 +36,7 @@ let scrape = (url) => {
 
 app.get("/", (req, res) => {
     console.log("1...");
-    scrape('http://www.hudl.com/profile/2102198/darie-johnson');
+    scrape('');
 });
 
 
