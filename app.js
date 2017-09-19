@@ -22,7 +22,7 @@ let scrape = (url) => {
         .evaluate(()=>{
             console.log("3...");
             let name = "";
-            $('.prof-ident-name').each(()=>{
+            $('classtag').each(()=>{
                 console.log("4...");
                 name = $(this).text();
                 console.log(name);
@@ -35,8 +35,10 @@ let scrape = (url) => {
 
 
 app.get("/", (req, res) => {
+    //insert url here
+    let url = "";
     console.log("1...");
-    scrape('');
+    scrape(url);
 });
 
 
